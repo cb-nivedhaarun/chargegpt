@@ -88,6 +88,7 @@
 <script>
 import "/static/css/chargegpt.css"
 import Header from '~/components/Header/Header.vue';
+import eventBus from '~/static/js/main.js';
 export default {
     components: {
         'Header': Header,
@@ -232,6 +233,18 @@ export default {
 ,
         }
     },
+    created() {
+        eventBus.$on('audio', this.updateMessage);
+    },
+    methods: {
+        updateMessage(data) {
+        this.audio = data;
+        },
+    },
+    
+    mounted() {
+        console.log(this.audio)
+    }
 }
 </script>
 

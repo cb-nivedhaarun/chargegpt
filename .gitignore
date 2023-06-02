@@ -1,0 +1,18 @@
+#Error & access log files from some system to be ignored
+access.log
+error.log
+docs
+review
+.DS_Store
+.crunch
+.map
+.sass-cache
+.vscode/settings.json
+src/.prettierignore
+src/.prettierrc.json
+src/static/sw.js
+src/static/~partytown
+static/app-static-assets
+package-lock.json
+src/package-lock.json
+node_modules

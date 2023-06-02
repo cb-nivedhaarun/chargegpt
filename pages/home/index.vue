@@ -159,6 +159,7 @@
 <script>
 import "/static/css/chargegpt.css"
 import Header from '~/components/Header/Header.vue';
+import eventBus from '~/static/js/main.js';
 export default {
     components: {
         'Header': Header,
@@ -397,6 +398,25 @@ export default {
                     //store the base64 URL that represents the URL of the recording audio
                     let base64URL = e.target.result;
 
+
+                    function setGlobalData(data) {
+                        console.log(data)
+                        eventBus.$emit('audio', data);
+                    }
+
+                    function saveFileToVariable(data64) {
+                        return fetch(data64)
+                            .then(response => response.blob())
+                            .then(blob => {
+                            self.audioFile = blob   
+                            setGlobalData(self.audioFile)
+                            return blob;
+                            })
+                            .catch(error => {
+                            console.error('Error fetching the audio file:', error);
+                        });
+                    }
+
                     //If this is the first audio playing, create a source element
                     //as pre populating the HTML with a source of empty src causes error
                     if (!audioElementSource) //if its not defined create it (happens first time only)
@@ -412,6 +432,8 @@ export default {
 
                     //call the load method as it is used to update the audio element after changing the source or other settings
                     audioElement.load();
+
+                    saveFileToVariable(base64URL);
 
                     //play the audio after successfully setting new src and type that corresponds to the recorded audio
                     console.log("Playing audio...");
