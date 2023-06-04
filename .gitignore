@@ -16,3 +16,4 @@ static/app-static-assets
 package-lock.json
 src/package-lock.json
 node_modules
+.nuxt
