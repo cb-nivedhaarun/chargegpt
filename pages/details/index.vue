@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :loggedIn= "true" />
     <div>
         <div class="container">
             <div id="details" class="flex flex-col py-20 max-w-3xl mx-auto">
@@ -72,11 +72,11 @@
                 <div class="grid grid-cols-2">
                     <div class="block">
                         <div class="text-blue-100 font-inter text-base mb-5">Not painting the right picture?</div>
-                        <a href="/" class="inline-block py-3 px-4 border-2 border-[#66CCF8] text-[#117DB6] rounded">Start over</a>
+                        <a href="/home" class="inline-block py-3 px-4 border-2 border-[#66CCF8] text-[#117DB6] rounded">Start over</a>
                     </div>
                     <div class="items-end flex flex-col">
                         <div class="text-blue-100 font-inter text-base mb-5">Accurately represents your business?</div>
-                        <a href="/" class="w-fit inline-block py-3 px-4 border-2 border-blue-900 bg-blue-900 text-grey-50 rounded">Continue</a>
+                        <a href="/site" class="w-fit inline-block py-3 px-4 border-2 border-blue-900 bg-blue-900 text-grey-50 rounded">Continue</a>
                     </div>
                 </div>
             </div>

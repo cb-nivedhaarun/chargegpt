@@ -1,6 +1,6 @@
 <template>
     <div>    
-        <Header />
+        <Header :loggedIn= "true"/>
         <div class="container">
             <div id="home" class="flex flex-col py-20 max-w-3xl mx-auto">
                 <div class="title mb-10">

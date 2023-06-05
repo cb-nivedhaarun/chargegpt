@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header loggedIn="false" />
+    <Header :loggedIn="false" />
     <div class="body">
         <div class="container">
             <div class="hero min-h-[80vh] max-h-[90vh] py-20 grid grid-cols-2">

@@ -1,4 +1,5 @@
-   <template> <div class="header py-7 bg-[#EFEFEF]">
+   <template> 
+   <div class="header py-7 bg-[#EFEFEF]">
         <div class="container">
           <div class="flex justify-between">
           <a href="/">
@@ -19,10 +20,12 @@
 
 <script>
 export default {
-    data: function() {
-        return {
-            loggedIn: true,
-        }
+
+    props: {
+        loggedIn: {
+            type: Boolean,
+            default: "false"
+        },
     },
 }
 </script>
